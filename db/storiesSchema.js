@@ -5,19 +5,19 @@ const Schema = mongoose.Schema;
 const storiesSchema = new Schema(
   {
     title: {
-      String,
+      type: String,
       required: true,
     },
     body: {
-      String,
+      type: String,
       required: true,
     },
     postedBy: {
-      String,
+      type: String,
       required: true,
     },
     votes: {
-      Number,
+      type: Number,
       required: true,
     },
     comments: [{ body: String, date: Date, postedBy: String }],
@@ -26,4 +26,3 @@ const storiesSchema = new Schema(
 );
 
 module.exports = mongoose.model("Story", storiesSchema);
-

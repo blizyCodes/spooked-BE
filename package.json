@@ -4,7 +4,8 @@
   "description": "",
   "main": "test.js",
   "scripts": {
-    "test": "jest app"
+    "test": "NODE_ENV=test nodemon listen.js",
+    "start": "NODE_ENV=development nodemon listen.js"
   },
   "repository": {
     "type": "git",
