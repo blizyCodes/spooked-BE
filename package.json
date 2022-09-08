@@ -4,7 +4,7 @@
   "description": "",
   "main": "test.js",
   "scripts": {
-    "test": "NODE_ENV=test nodemon listen.js",
+    "test": "jest",
     "start": "NODE_ENV=development nodemon listen.js"
   },
   "repository": {
