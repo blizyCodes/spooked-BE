@@ -3,19 +3,26 @@ const app = require("../app.js");
 const seed = require("../db/data/seedTest");
 const mongoose = require("mongoose");
 
-jest.setTimeout(13000);
+jest.setTimeout(15000);
 beforeEach(() => seed());
 afterAll(() => mongoose.disconnect());
 
-describe("/api/stories/", () => {
+describe("/api/topics/", () => {
   describe("STATUS 200", () => {
-    test("should respond with an array of story objects", () => {
-      console.log("trexw test");
+    test("should respond with an array of topic objects containing slug and description properties", () => {
       return request(app)
-        .get("/api/stories")
+        .get("/api/topics")
         .expect(200)
-        .then(({ body }) => {
-          console.log(body);
+        .then(({ body: topics }) => {
+          expect(topics).toHaveLength(3);
+          topics.forEach((topic) => {
+            expect(topic).toEqual(
+              expect.objectContaining({
+                slug: expect.any(String),
+                description: expect.any(String),
+              })
+            );
+          });
         });
     });
   });

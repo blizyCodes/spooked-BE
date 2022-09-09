@@ -1,0 +1,11 @@
+[
+  {
+    "slug": "Ghosts",
+    "description": "Stories related to paranormal activity and ghosts."
+  },
+  {
+    "slug": "Zombies",
+    "description": "For Zombies and Undeath afficionados."
+  },
+  { "slug": "Paranoia", "description": "Warning! You might not sleep tonight." }
+]

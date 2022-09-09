@@ -20,6 +20,10 @@ const storiesSchema = new Schema(
       type: Number,
       required: true,
     },
+    topic: {
+      type: String,
+      required: true,
+    },
     comments: [{ body: String, date: Date, postedBy: String }],
   },
   { timestamps: true }
