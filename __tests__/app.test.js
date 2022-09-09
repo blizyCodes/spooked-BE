@@ -27,3 +27,25 @@ describe("/api/topics/", () => {
     });
   });
 });
+
+describe("/api/users/", () => {
+  describe("STATUS 200", () => {
+    test("should respond with an array of user objects containing userName, info and avatar properties", () => {
+      return request(app)
+        .get("/api/users")
+        .expect(200)
+        .then(({ body: users }) => {
+          expect(users).toHaveLength(3);
+          users.forEach((user) => {
+            expect(user).toEqual(
+              expect.objectContaining({
+                userName: expect.any(String),
+                info: expect.any(String),
+                avatar: expect.any(String),
+              })
+            );
+          });
+        });
+    });
+  });
+});
